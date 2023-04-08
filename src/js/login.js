@@ -1,0 +1,24 @@
+// login function
+function valid_login() {
+    event.preventDefault()
+
+    User_login = document.getElementById("User_name_login")
+    Password_login = document.getElementById("Password_login")
+    if(!User_DB.hasOwnProperty(User_login.value))
+    {
+        show_error_in_div("The User is not exist");
+        return false;
+    }
+    // get the password from the database
+    password_data = User_DB[User_login.value]['Password']
+    if (password_data !== Password_login.value)
+    {
+        show_error_in_div("The Password is not corrected");
+        return false;
+    }
+    // make the login and move to the game screen
+    show_configuration()
+    form_login = document.getElementById("LoginForm")
+    form_login.reset()
+
+}

@@ -1,0 +1,278 @@
+#Menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    font-size: large;
+    color: black;
+    padding: 15px;
+    background-image: linear-gradient(180deg,#ffffff, rgba(196, 164, 250, 0.83));
+    cursor: url('Resource/imgs/cursor/black-cursor.png'), auto;
+
+}
+html{
+    cursor: url('Resource/imgs/cursor/black-cursor-mouse.png'), auto;
+    font-family: 'Bangers', cursive;
+}
+#Menu li{
+    display: inline-block;
+    height: 100%;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
+
+#Menu li a:hover {
+    text-shadow: 0 0 20px #ffffff, 0 0 20px #ffffff, 0 0 20px #ffffff, 0 0 20px #ffffff;
+}
+#Menu a{
+    transition: text-shadow 0.5s ease;
+    color: black;
+    display: block;
+    padding: 0 20px;
+    height: 100%;
+    text-decoration: none;
+    line-height: 50px;
+}
+header{
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+button{
+    cursor: url('Resource/imgs/cursor/black-cursor.png'), auto;
+    text-align: center;
+    height: 80px;
+    width: 150px;
+    font-size: 30px;
+    font-family: 'Bangers', cursive;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #fff, 0 0 1px #ffffff, 0 0 1px #ffffff;
+    background: radial-gradient(#6f45b6 20px,white);
+    box-shadow: 0 5px 20px -5px rgb(3, 3, 3);
+    border-radius: 15px;
+    margin-bottom: 100px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+h2{
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #fff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+
+}
+.video-background{
+    left: 0;
+    margin-top: 70px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.video-background video{
+    position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 5px 6px 200px rgba(0, 0, 0, 0.8) inset;
+}
+#WelcomePage {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2b2b2c;
+}
+
+#RegisterPage, #LoginPage{
+    position: absolute;
+    font-size: 25px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: #2b2b2c;
+    text-shadow: 0 0 5px #ffffff, 0 0 5px #fff, 0 0 5px #ffffff, 0 0 5px #ffffff;
+}
+
+.hidden {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+.reveal{
+    animation: fadeIn 1s ease-in-out forwards;
+
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+footer{
+    position: fixed;
+    margin-top: 20px;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(3600deg,#ffffff, rgba(196, 164, 250, 0.83));
+    color: black;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    font-size: 30px;
+}
+
+input{
+    font-family: 'Bangers', cursive;
+    margin: 5px;
+    border-radius: 8px;
+    width: 400px;
+    height: 25px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.74);
+}
+
+#Submit_Register, #Submit_Login{
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+
+input[type="password"] input[type="text"] {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.Error{
+    position: absolute;
+    z-index: 9999;
+    margin: auto;
+    top: 55%;
+    left: 40%;
+    font-size: 30px;
+    padding: 20px;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #fff, 0 0 1px #ffffff, 0 0 1px #ffffff;
+    background: radial-gradient(rgba(145, 114, 199, 0.85) 20px, #6f45b6);
+    border-radius: 15px;
+}
+
+.Error_button{
+    position: absolute;
+    left: 33%;
+    bottom: 10%;
+    margin:auto;
+}
+
+#Configuration{
+    position: absolute;
+    z-index: 9999;
+    top: 2.5%;
+    left: 26%;
+    font-size: 30px;
+    padding: 20px;
+    width: 650px;
+    height: 500px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #fff, 0 0 1px #ffffff, 0 0 1px #ffffff;
+    background: radial-gradient(rgba(145, 114, 199, 0.85) 20px, #6f45b6);
+    border-radius: 15px;
+}
+#Start_game_button{
+    position: absolute;
+    top: 82%;
+    left: 40%;
+    width: 150px;
+    height: 80px;
+}
+
+.Spaceship_select{
+    display: inline-block;
+    top: 70%;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.68);
+
+}
+
+#Spaceship_1{
+    background-image: url("Resource/imgs/spaceship/spaceship_1.png");
+}
+#Spaceship_2{
+    background-image: url("Resource/imgs/spaceship/spaceship_2.png");
+}
+#Spaceship_3{
+    background-image: url("Resource/imgs/spaceship/spaceship_3.png");
+}
+#Spaceship_4{
+    background-image: url("Resource/imgs/spaceship/spaceship_4.png");
+}
+
+.SpaceShip_chosen{
+    box-shadow: 0px 0px 40px white;
+}
+select{
+    left: 0;
+    font-family: 'Bangers', cursive;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+#key_choose{
+    margin-bottom: 40px;
+}
+
+.chose_key{
+    position: absolute;
+    text-align: center;
+    z-index: 9999;
+    margin: auto;
+    top: 42%;
+    left: 42.5%;
+    font-size: 30px;
+    padding: 20px;
+    width: 200px;
+    height: 30px;
+    font-family: 'Bangers', cursive;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #fff, 0 0 1px #ffffff, 0 0 1px #ffffff;
+    background: radial-gradient(rgba(145, 114, 199, 0.93) 20px, #6f45b6);
+    border-radius: 15px;
+    box-shadow: 0px 0px 40px white;
+}
+
+#Game{
+    position: absolute;
+    z-index: 9999;
+    width: 800px;
+    height: 550px;
+    top: 2%;
+    left: 21%;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 8px;
+    background-image: url("Resource/imgs/background/game_background.png");
+}

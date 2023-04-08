@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" href="style.css">
+    <title>Space War</title>
+</head>
+<body>
+<div id="Menu">
+    <li><a herf="#" >About</a></li>
+    <li><a herf="#" >Configuration</a></li>
+    <li><a herf="#" >About</a></li>
+    <li><a herf="#" >About</a></li>
+</div>
+
+<section class="video-background">
+    <!-- add background video for the game -->
+    <video autoplay muted loop>
+        <source src="Resource/videos/web-backgroud.mp4" type="video/mp4">
+    </video>
+    <!-- div for the Welcome page-->
+    <div id="WelcomePage">
+        <header>
+            <h2>Welcome To Space War</h2>
+        </header>
+        <button id="Register" onclick="Show_register()"> Register</button>
+        <button id="Login" onclick="Show_login()"> Login</button>
+    </div>
+    <!-- div for Register page-->
+    <div id="RegisterPage" style="display: none">
+        <header>
+            <h2>Welcome To Register Page</h2>
+        </header>
+        <form onsubmit="valid_parameters()" id="RegisterForm">
+            <br>
+            <label for="User_name">User name: </label>
+            <input id="User_name" type="text" placeholder="Enter your user name" required>
+            <br>
+            <label for="Password">Password: </label>
+            <input id="Password" type="password" placeholder="Include char and numbers min length of 8" required>
+            <br>
+            <label for="Re-Password">Re-Password: </label>
+            <input id="Re-Password" type="password" placeholder="Include char and numbers min length of 8" required>
+            <br>
+            <label for="First_name">First name: </label>
+            <input id="First_name" type="text" placeholder="Enter only chars" required>
+            <br>
+            <label for="Last_name">Last name: </label>
+            <input id="Last_name" type="text" placeholder="Enter only chars" required>
+            <br>
+            <label for="Email">Email: </label>
+            <input id="Email" type="email" placeholder="Enter your email" required>
+            <br>
+            <label for="Birthday">Birthday: </label>
+            <input id="Birthday" type="date" required>
+            <br>
+            <button type="submit" id="Back_Register" onclick="Show_WelcomePage_from_register()" >Back</button>
+            <button type="submit" id="Submit_Register" >Submit</button>
+        </form>
+    </div>
+    <!-- div for Login page -->
+    <div id="LoginPage" style="display: none">
+        <header>
+            <h2>Welcome To Login Page</h2>
+        </header>
+        <form onsubmit="valid_login()" id="LoginForm">
+            <br>
+            <label for="User_name_login">User name: </label>
+            <input id="User_name_login" type="text" placeholder="Enter your user name" required>
+            <br>
+            <label for="Password_login">Password: </label>
+            <input id="Password_login" type="password" placeholder="Enter your password" required>
+            <br>
+            <button type="submit" id="Submit_Login" >Login</button>
+            <button type="submit" id="Back_Login" onclick="Show_WelcomePage_from_login()">Back</button>
+        </form>
+    </div>
+    <!-- div for the configuration page -->
+    <div style="display: none" id="Configuration">
+        <h2>Configuration</h2>
+        <label for="time">Select time: </label>
+        <select id="time" name="time">
+            <option value="2">2:00</option>
+            <option value="3">3:00</option>
+            <option value="4">4:00</option>
+            <option value="5">5:00</option>
+            <option value="6">6:00</option>
+            <option value="7">7:00</option>
+            <option value="8">8:00</option>
+            <option value="9">9:00</option>
+            <option value="10">10:00</option>
+        </select>
+        <br>
+        <br>
+        <button id="key_choose"  onclick="selected_key()">Select Fire key</button>
+        <br>
+        <button class="Spaceship_select" id="Spaceship_1"></button>
+        <button class="Spaceship_select" id="Spaceship_2"></button>
+        <button class="Spaceship_select" id="Spaceship_3"></button>
+        <button class="Spaceship_select" id="Spaceship_4"></button>
+        <button type="submit" id="Start_game_button"  onclick="startgame()">Start Game</button>
+    </div>
+    <!-- div for the game screen-->
+    <div style="display: none" id="GameScreen">
+        <canvas id="Game" width="800" height="500">
+
+        </canvas>
+    </div>
+</section>
+<footer>
+    <a>about</a>
+</footer>
+
+</body>
+</html>
+<script src="src/js/change-content.js"> </script>
+<script src="src/js/login.js"> </script>
+<script src="src/js/register.js"> </script>
+<script src="src/js/configuration.js"> </script>
+<script src="src/js/game.js"> </script>
