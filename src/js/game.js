@@ -9,8 +9,9 @@ location_x_player = Math.floor(Math.random() * 400) + 100;
 //first y location for the spaceship
 location_y_player = 410;
 
-var canvas_size_for_13_inch = {x:725,y:420}
+canvas_size_for_13_inch = {x:725,y:420}
 shot_laser = false;
+player_area = 1 - 0.4;
 //laser parameters for the player spaceship
 var player_laser_param = {x:-1,y:-1,w:40,h:40}
 var canvas;
@@ -28,7 +29,7 @@ function move_space_left() {
 
 function move_space_up() {
     // TODO need to add check that the player is not leving the map
-    if (location_y_player - 20 > 0){
+    if (location_y_player - 20 > canvas_size_for_13_inch.y*player_area){
         location_y_player -= 20
         requestAnimationFrame(draw)
     }
@@ -83,6 +84,7 @@ function player_fire() {
     shot_laser = true
     requestAnimationFrame(draw)
 }
+
 
 // func for the start of the game and add event listener for the keyboard
 function start_game_after_config() {
