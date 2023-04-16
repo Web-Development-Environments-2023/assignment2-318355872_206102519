@@ -14,8 +14,9 @@
 <div id="Menu">
     <li><a herf="#" >About</a></li>
     <li><a herf="#" >Configuration</a></li>
-    <li><a herf="#" >Records</a></li>
     <li><a herf="#" >About</a></li>
+    <li><a herf="#about" onclick="ShowAbout()" >About</a></li>
+    <!-- <li><button id="About" onclick="ShowAbout()">About</button></li> -->
 </div>
 
 <section class="video-background">
@@ -112,9 +113,26 @@
         </canvas>
     </div>
 </section>
-<footer>
-    <a>about</a>
-</footer>
+
+    <dialog  id="about">
+        <button id="x"  onclick="CloseAbout()">X</button>
+        <div class="header">
+            <span><h2>ABOUT US</h2> </span>
+        </div>
+        <div id="aboutmodel">
+        <p>
+            <b>Challenges:</b><br>
+            <p>
+                1. Changing the degree of the shot<br>
+                2. difficult making the game(to change)
+            </p>
+            <b><u>Instructions:</u></b><br>
+            bla bla bla....</br>
+            <center><b>Nitay Yakoby & Itamar Zhapran</b></center>
+        </p>
+    </div>
+    </dialog>
+    <footer></footer>
 
 </body>
 </html>
