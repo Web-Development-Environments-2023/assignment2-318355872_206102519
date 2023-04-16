@@ -4,7 +4,7 @@ WelcomePage = document.getElementById("WelcomePage");
 ConfigurationPage = document.getElementById("Configuration")
 LoginPage = document.getElementById("LoginPage")
 GamePage = document.getElementById("GameScreen")
-
+AboutPage=document.getElementById("about")
 //func that hide the welcome page and reveal the Register page
 function Show_register() {
     WelcomePage.classList.add('hidden');
@@ -81,4 +81,16 @@ function Show_select_fire_key(){
     });
     document.body.appendChild(div_chose_key)
 }
+function ShowAbout(){
+    AboutPage.showModal();
+}
+function CloseAbout(){
+    AboutPage.close();
+}
+// close dialog by clicking somewhere out of the dialog window
+AboutPage.addEventListener('click', () => AboutPage.close());
+const myDiv = document.getElementById('aboutmodel');
+myDiv.addEventListener('click', (event) => event.stopPropagation());
+
+
 
