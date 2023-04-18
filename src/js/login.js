@@ -1,7 +1,9 @@
 // login function
+User_score_list = []
 function valid_login() {
     event.preventDefault()
-
+    // if there is user before we need to delete is game history
+    User_score_list = []
     User_login = document.getElementById("User_name_login")
     Password_login = document.getElementById("Password_login")
     if(!User_DB.hasOwnProperty(User_login.value))

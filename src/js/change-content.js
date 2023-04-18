@@ -1,9 +1,11 @@
 // for each page get it in variable
 RegisterPage = document.getElementById("RegisterPage");
 WelcomePage = document.getElementById("WelcomePage");
-ConfigurationPage = document.getElementById("Configuration")
-LoginPage = document.getElementById("LoginPage")
-GamePage = document.getElementById("GameScreen")
+ConfigurationPage = document.getElementById("Configuration");
+LoginPage = document.getElementById("LoginPage");
+GamePage = document.getElementById("GameScreen");
+EndDiv = document.getElementById("EndGame");
+GameSoundTrack = document.getElementById("Game_sound");
 
 //func that hide the welcome page and reveal the Register page
 function Show_register() {
@@ -47,8 +49,20 @@ function show_game_screen() {
     ConfigurationPage.style.display = 'none';
     GamePage.classList.add('reveal');
     GamePage.style.display = 'block';
+    GameSoundTrack.play()
     start_game_after_config()
 }
+
+function show_end_game_screen() {
+    EndDiv.classList.add('reveal');
+    EndDiv.style.display = 'block';
+}
+
+function hide_end_game_screen() {
+    EndDiv.classList.add('hidden');
+    EndDiv.style.display = 'none';
+}
+
 // func that create error message on the page with Back button
 // get String of the error message like "Not correct Password"
 function show_error_in_div(error_message) {
@@ -70,15 +84,24 @@ function show_error_in_div(error_message) {
 // pop up div for get key code of the fire key
 // TODO need to fix and add "if already the div is exist then dont create again
 function Show_select_fire_key(){
-    div_chose_key = document.createElement('div_key');
+     div_chose_key = document.createElement('div_key');
     div_chose_key.classList.add('chose_key');
     message = document.createTextNode("Click On Fire Key");
     div_chose_key.appendChild(message);
-    div_chose_key.addEventListener('keydown', function () {
-        div_chose_key.classList.add('hidden');
-        div_chose_key.remove();
-        FireKey = event.keyCode;
-    });
     document.body.appendChild(div_chose_key)
+    div_chose_key.id = 'key_div'
+    div_catch = document.getElementById('key_div')
+    document.addEventListener('keydown', key_down_for_fire);
+    ConfigurationPage.classList.add('freeze')
+
+    function key_down_for_fire() {
+        div_catch.classList.add('hidden');
+        div_catch.remove();
+        FireKey = event.keyCode;
+        document.removeEventListener('keydown', key_down_for_fire);
+        ConfigurationPage.classList.remove('freeze');
+        // if the player chose space it will activate the button again the prevent will prevent to do it
+        event.preventDefault();
+    }
 }
 

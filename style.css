@@ -276,3 +276,49 @@ select{
     border-radius: 8px;
     background-image: url("Resource/imgs/background/game_background.png");
 }
+
+.freeze {
+    pointer-events: none;
+}
+
+#GameTimer
+{
+    position: absolute;
+    z-index: 9999;
+    left: 2%;
+    top: 7%;
+    width: 200px;
+    font-size: 45px;
+    text-align: left;
+    text-shadow: 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000;
+    color: #ffffff;
+}
+#NewGameButton{
+    position: absolute;
+    z-index: 9999;
+    left: 3%;
+    top: 46%;
+}
+
+#EndGame{
+    position: absolute;
+    z-index: 9999;
+    width: 800px;
+    height: 550px;
+    font-size: 50px;
+    text-align: center;
+    top: 2%;
+    left: 21%;
+    box-shadow: 0px 0px 20px white;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+}
+h1{
+    margin: 20px;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: left;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    border-radius: 8px;
+}
