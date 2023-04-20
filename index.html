@@ -86,19 +86,20 @@
         <h2>Configuration</h2>
         <label for="time">Select time: </label>
         <select id="time" name="time">
-            <option value="2">2:00</option>
-            <option value="3">3:00</option>
-            <option value="4">4:00</option>
-            <option value="5">5:00</option>
-            <option value="6">6:00</option>
-            <option value="7">7:00</option>
-            <option value="8">8:00</option>
-            <option value="9">9:00</option>
-            <option value="10">10:00</option>
+<!--            <option value="121">2:00</option>-->
+            <option value="5">2:00</option>
+            <option value="181">3:00</option>
+            <option value="241">4:00</option>
+            <option value="301">5:00</option>
+            <option value="361">6:00</option>
+            <option value="421">7:00</option>
+            <option value="481">8:00</option>
+            <option value="541">9:00</option>
+            <option value="601">10:00</option>
         </select>
         <br>
         <br>
-        <button id="key_choose"  onclick="selected_key()">Select Fire key</button>
+        <button id="key_choose"  onclick="selected_key()" >Select Fire key</button>
         <br>
         <button class="Spaceship_select" id="Spaceship_1"></button>
         <button class="Spaceship_select" id="Spaceship_2"></button>
@@ -108,9 +109,12 @@
     </div>
     <!-- div for the game screen-->
     <div style="display: none" id="GameScreen">
-        <canvas id="Game" width="800" height="500">
-
-        </canvas>
+        <canvas id="Game" width="800" height="500"></canvas>
+        <audio id="Game_sound" loop ><source src="Resource/soundtrack/game_soundtrack.mp3"></audio>
+        <button class="NewGameButton" id="NewGameButton" onclick="start_game_after_config()">New Game</button>
+        <div style="display: none" id="GameTimer"></div>
+        <div style="display: none" id="EndGame">
+        </div>
     </div>
 </section>
 
