@@ -15,8 +15,7 @@
     <li><a herf="#" >About</a></li>
     <li><a herf="#" >Configuration</a></li>
     <li><a herf="#" >About</a></li>
-    <li><a herf="#about" onclick="ShowAbout()" >About</a></li>
-    <!-- <li><button id="About" onclick="ShowAbout()">About</button></li> -->
+    <li><a herf="#" >About</a></li>
 </div>
 
 <section class="video-background">
@@ -72,10 +71,10 @@
         <form onsubmit="valid_login()" id="LoginForm">
             <br>
             <label for="User_name_login">User name: </label>
-            <input id="User_name_login" type="text" placeholder="Enter your user name" >
+            <input id="User_name_login" type="text" placeholder="Enter your user name" required>
             <br>
             <label for="Password_login">Password: </label>
-            <input id="Password_login" type="password" placeholder="Enter your password" >
+            <input id="Password_login" type="password" placeholder="Enter your password" required>
             <br>
             <button type="submit" id="Submit_Login" >Login</button>
             <button type="submit" id="Back_Login" onclick="Show_WelcomePage_from_login()">Back</button>
@@ -117,26 +116,9 @@
         </div>
     </div>
 </section>
-
-    <dialog  id="about">
-        <button id="x"  onclick="CloseAbout()">X</button>
-        <div class="header">
-            <span><h2>ABOUT US</h2> </span>
-        </div>
-        <div id="aboutmodel">
-        <p>
-            <b>Challenges:</b><br>
-            <p>
-                1. Changing the degree of the shot<br>
-                2. difficult making the game(to change)
-            </p>
-            <b><u>Instructions:</u></b><br>
-            bla bla bla....</br>
-            <center><b>Nitay Yakoby & Itamar Zhapran</b></center>
-        </p>
-    </div>
-    </dialog>
-    <footer></footer>
+<footer>
+    <a>about</a>
+</footer>
 
 </body>
 </html>

@@ -15,8 +15,15 @@ let fire_array;
 let original_x;
 let original_y; 
 let reset= false;
-// let screen_fire_alert= 315;
 
+// 2 var for the countdown
+var countDownDate;
+var interval_count;
+var GameOver = false;
+var first_game = true;
+// player score and life
+player_score = 0
+player_life = 0
 // section for creating matrix of enemy spaces
 function create_Enemy_Array(){
  enemy_spaceship_2d_array= new Array(4);
@@ -167,10 +174,10 @@ function move_space_down() {
 function startTimer()
 {
 //    canvas.addEventListener( "click", fireCannonball, false );
-   intervalTimer = window.setInterval( updatePositions, TIME_INTERVAL);
-   interval_enemy_fire= window.setInterval(enemy_fire,TIME_INTERVAL);
+   intervalTimer = window.setInterval(updatePositions, TIME_INTERVAL);
+//    interval_enemy_fire= window.setInterval(enemy_fire,TIME_INTERVAL);
 } // end function startTimer
-
+// this function upadate positon of the enemy's fire uses the interval below "interval_enemy_fire" maybe we can add it to
 function enemy_fire(){
     // let length_dict= Object.keys(dict_position_enemy).length;
     let row = Math.floor(Math.random() *4) ;
@@ -178,19 +185,18 @@ function enemy_fire(){
     if(enemy_spaceship_2d_array[row][col]==1&&!check_if_enemyspaceship_shot(row,col)&&
     check_if_fire_cross_three_quarters())
     {
-    if (!GameOver){
-            enemy_laser_param.x=enemy_state.start+70*col+15;
+        enemy_laser_param.x=enemy_state.start+70*col+15;
         enemy_laser_param.y=70*row +30;
         let x_h=enemy_laser_param.x;
         let y_h=enemy_laser_param.y;
-            //check if spaceship is already in the array
+        //check if spaceship is already in the array
         if(check_if_spaceship_in_the_array(row,col)){
             set_new_fire_position(row,col,x_h,y_h);
         }
         else{
             fire_array.push([x_h,y_h,true,row,col]);
         }
-            contex.drawImage(enemy_space_ship_fire,x_h,y_h,40,40);
+        // contex.drawImage(enemy_space_ship_fire,x_h,y_h,40,40);
         // alert("hi")
     }
     //update opsition of the fires
@@ -213,29 +219,24 @@ function enemy_fire(){
                         set_fire_enemy_false();
                         return;
                     }
-                    else{
-                contex.drawImage(enemy_space_ship_fire,fire_array[i][0],temp,40,40);
-                    }
+                //     else{
+                // contex.drawImage(enemy_space_ship_fire,fire_array[i][0],temp,40,40);
+                //     }
             }
         }
     
         }
 }
-
-    
-
-
-
-
+// this function update postion of every element in the game using interval above
 function updatePositions()
 {
         // update the Enemy's position
-//    var targetUpdate = TIME_INTERVAL / 1000.0 * target_velocity;
-//    enemy_state.start += targetUpdate;
-//         // check the state of the enemy is out side of the canvas
-//    if (enemy_state.start < 0 || enemy_state.start+5*70 > canvas.width){
-//     target_velocity *= -1;
-//    }
+   var targetUpdate = TIME_INTERVAL / 1000.0 * target_velocity;
+   enemy_state.start += targetUpdate;
+        // check the state of the enemy is out side of the canvas
+   if (enemy_state.start < 0 || enemy_state.start+5*70 > canvas.width){
+    target_velocity *= -1;
+   }
 //    draw the laser
         if (shot_laser)
         {
@@ -265,6 +266,7 @@ function updatePositions()
         }
 
     }
+    enemy_fire();
     draw();
 }
 
@@ -285,16 +287,26 @@ function draw_enemy(img_enemy){
 // IMPORTANT for add enemy and other drawing , need to add them to the func
 function draw() {
     // draw the spae ship
+    if(!GameOver){
     contex.clearRect(0,0,canvas.width,canvas.height)
     contex.drawImage(space_ship_img, location_x_player, location_y_player,70,70)
     draw_enemy(enemy_space_ship_img);
     if(shot_laser){
     contex.drawImage(space_ship_fire, player_laser_param.x ,player_laser_param.y,40,40);
         }
-   
+//    requestAnimationFrame(draw);
+if(fire_array.length!=0){
+    for(let i=0;i<fire_array.length;i++){
+        if(fire_array[i][2]){
+            contex.drawImage(enemy_space_ship_fire,fire_array[i][0],fire_array[i][1],40,40);
+        }
     }
-
 }
+    }
+}
+    
+
+
 // func for the laser beam of the player
 function player_fire() {
     shot_laser = true
@@ -392,13 +404,10 @@ function start_game_after_config() {
 
     }
     // added for the reset button
-    location_x_player = original_x_location;
-    location_y_player = original_y_location;
     GameOver = false
     create_Enemy_Array();
     create_array_enemy_fire();
     enemy_state= new Object();
-    dict_position_enemy= {};
     enemy_state.start=0;
     space_ship_fire.src = "Resource/imgs/effects/laser.png"
     enemy_space_ship_fire.src = "Resource/imgs/effects/laser_enemy.png"
@@ -413,18 +422,17 @@ function start_game_after_config() {
     canvasWidth = w; // store the width
     canvasHeight = h; // store the height
     
+    
     initialTargetVelocity = -h / 4; // initial target speed multiplier
     contex = canvas.getContext("2d");
-    // reset_elements();
-    draw()
-    create_count_down()
-    if (first_game)
-    {
-    draw_enemy(enemy_space_ship_img);
+    // draw_enemy(enemy_space_ship_img);
     target_velocity=initialTargetVelocity;
     startTimer();
-    
-    
+    // reset_elements();
+    draw();
+    create_count_down();
+    if (first_game)
+    {
 
         document.addEventListener('keydown' ,function () {
             key = event.keyCode;
@@ -452,6 +460,4 @@ function start_game_after_config() {
         })
         first_game = false
     }
-
-
 }
