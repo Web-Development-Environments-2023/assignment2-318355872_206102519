@@ -40,9 +40,8 @@ function valid_login() {
         return false;
     }
     // make the login and move to the game screen
->>>>>>> main
     show_configuration()
-//     form_login = document.getElementById("LoginForm")
-//     form_login.reset()
+    form_login = document.getElementById("LoginForm")
+    form_login.reset()
 
-// }
+}
