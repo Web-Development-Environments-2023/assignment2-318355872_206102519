@@ -23,7 +23,7 @@ html{
     height: 100%;
     color: black;
     text-align: center;
-    font-size: 30px;
+    font-size: 200%;
 }
 
 #Menu li a:hover {
@@ -31,13 +31,14 @@ html{
 }
 #Menu a{
     transition: text-shadow 0.5s ease;
-    color: black;
+    color: #000000;
     display: block;
     padding: 0 20px;
     height: 100%;
     text-decoration: none;
     line-height: 50px;
 }
+
 header{
     font-family: 'Bangers', cursive;
     text-align: center;
@@ -134,10 +135,10 @@ footer{
     bottom: 0;
     background-image: linear-gradient(3600deg,#ffffff, rgba(196, 164, 250, 0.83));
     color: black;
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
     width: 100%;
-    height: 30px;
+    height: 3%;
     font-size: 30px;
 }
 
@@ -191,9 +192,9 @@ input[type="password"] input[type="text"] {
     top: 2.5%;
     left: 26%;
     font-size: 30px;
-    padding: 20px;
-    width: 650px;
-    height: 500px;
+    padding: 15px;
+    width: 50%;
+    height: 67%;
     text-align: center;
     font-family: 'Bangers', cursive;
     text-shadow: 0 0 10px #ffffff, 0 0 10px #fff, 0 0 1px #ffffff, 0 0 1px #ffffff;
@@ -204,15 +205,15 @@ input[type="password"] input[type="text"] {
     position: absolute;
     top: 82%;
     left: 40%;
-    width: 150px;
-    height: 80px;
+    width: 20%;
+    height: 12%;
 }
 
 .Spaceship_select{
     display: inline-block;
     top: 70%;
-    width: 80px;
-    height: 80px;
+    width: 12%;
+    height: 15%;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.68);
@@ -244,7 +245,9 @@ select{
 
 }
 #key_choose{
-    margin-bottom: 40px;
+    margin-bottom: 5%;
+    width: 30%;
+    height: 12%;
 }
 
 .chose_key{
@@ -268,13 +271,16 @@ select{
 #Game{
     position: absolute;
     z-index: 9999;
-    width: 800px;
-    height: 550px;
+    width: 75%;
+    height: 70%;
     top: 2%;
     left: 21%;
     box-shadow: 0px 0px 20px white;
     border-radius: 8px;
     background-image: url("Resource/imgs/background/game_background.png");
+    background-size: contain;
+    max-width: 75%;
+    max-height: 70%;
 }
 
 .freeze {
@@ -288,23 +294,26 @@ select{
     left: 2%;
     top: 7%;
     width: 200px;
-    font-size: 45px;
+    font-size: 275%;
     text-align: left;
     text-shadow: 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000;
     color: #ffffff;
 }
 #NewGameButton{
     position: absolute;
+    font-size: 250%;
+    width: 14%;
+    height: 10%;
     z-index: 9999;
     left: 3%;
-    top: 46%;
+    top: 62%;
 }
 
 #EndGame{
     position: absolute;
     z-index: 9999;
-    width: 800px;
-    height: 550px;
+    width: 75%;
+    height: 70%;
     font-size: 50px;
     text-align: center;
     top: 2%;
@@ -314,11 +323,46 @@ select{
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.8);
 }
-h1{
+h1 {
     margin: 20px;
     font-size: 50px;
     font-weight: normal;
     text-align: left;
     text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
     border-radius: 8px;
+}
+
+dialog{
+    position: absolute;
+    z-index: 9999;
+    width: 50%;
+    height: 65%;
+    font-size: 50px;
+    top: 12%;
+    text-align: center;
+    box-shadow: 0px 0px 20px white;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+}
+p{
+    font-size: 43%;
+    text-align: left;
+}
+h4{
+    font-size: 50%;
+    top: 1%;
+    margin: 0.1px;
+}
+h3{
+    margin: 20px;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    border-radius: 8px;
+}
+#x{
+    width: 10%;
+    height: 12%;
 }
