@@ -294,7 +294,7 @@ select{
     left: 2%;
     top: 7%;
     width: 200px;
-    font-size: 45px;
+    font-size: 275%;
     text-align: left;
     text-shadow: 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000, 0 0 10px #000000;
     color: #ffffff;
@@ -336,7 +336,7 @@ dialog{
     position: absolute;
     z-index: 9999;
     width: 50%;
-    height: 45%;
+    height: 65%;
     font-size: 50px;
     top: 12%;
     text-align: center;
@@ -346,10 +346,13 @@ dialog{
     background: rgba(255, 255, 255, 0.95);
 }
 p{
-    font-size: 50%;
+    font-size: 43%;
+    text-align: left;
 }
 h4{
-    margin: 1%;
+    font-size: 50%;
+    top: 1%;
+    margin: 0.1px;
 }
 h3{
     margin: 20px;
@@ -358,4 +361,8 @@ h3{
     text-align: center;
     text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
     border-radius: 8px;
+}
+#x{
+    width: 10%;
+    height: 12%;
 }

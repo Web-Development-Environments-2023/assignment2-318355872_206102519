@@ -59,6 +59,8 @@ function show_configuration() {
     LoginPage.style.display = 'none';
     ConfigurationPage.classList.add('reveal');
     ConfigurationPage.style.display = 'block';
+    document.getElementById("time").selectedIndex = 0;
+
 }
 // func that reveal the game screen from the configuration screen
 function show_game_screen() {
@@ -66,6 +68,7 @@ function show_game_screen() {
     ConfigurationPage.style.display = 'none';
     GamePage.classList.add('reveal');
     GamePage.style.display = 'block';
+    GameSoundTrack.currentTime =0;
     GameSoundTrack.play()
     start_game_after_config()
 }
@@ -103,7 +106,6 @@ function show_error_in_div(error_message) {
     Menu.classList.add('freeze')
 }
 // pop up div for get key code of the fire key
-// TODO need to fix and add "if already the div is exist then dont create again
 function Show_select_fire_key(){
      div_chose_key = document.createElement('div_key');
     div_chose_key.classList.add('chose_key');

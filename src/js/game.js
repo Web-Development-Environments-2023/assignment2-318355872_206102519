@@ -147,7 +147,6 @@ player_score = 0
 player_life = 0
 //func for moving the space ship
 function move_space_left() {
-    // TODO need to add check that the player is not leving the map
     if (location_x_player - 20 > 0)
     {
         location_x_player -= 20
@@ -157,7 +156,6 @@ function move_space_left() {
 //func for moving the space ship
 
 function move_space_up() {
-    // TODO need to add check that the player is not leving the map
     if (location_y_player - 20 > canvas_size_for_13_inch.y*player_area){
         location_y_player -= 20
         requestAnimationFrame(draw)
@@ -166,7 +164,6 @@ function move_space_up() {
 //func for moving the space ship
 
 function move_space_right() {
-    // TODO need to add check that the player is not leving the map
     if (location_x_player + 20 < canvas_size_for_13_inch.x)
     {
         location_x_player += 20
@@ -176,7 +173,6 @@ function move_space_right() {
 //func for moving the space ship
 
 function move_space_down() {
-    // TODO need to add check that the player is not leving the map
     if (location_y_player + 20 < canvas_size_for_13_inch.y)
     {
         location_y_player += 20
@@ -289,13 +285,13 @@ function updatePositions()
                         enemy_spaceship_2d_array[i][j]=0;
                         
                         //calculate score
-                        if(i==3){
+                        if(i===3){
                             player_score+=5;
                         }
-                        else if(i==2){
+                        else if(i===2){
                             player_score+=10;
                         }
-                        else if(i==1){
+                        else if(i===1){
                             player_score+=15;
                         }
                         else{
@@ -308,7 +304,7 @@ function updatePositions()
 
     }
     if(check_all_enemy_eliminate()){
-        GameOver=true;
+        end_game();
     }
     enemy_fire();
     draw();
@@ -388,7 +384,7 @@ function update_timer() {
         counter_velocity+=1;
         
     }
-      timer_div.innerHTML = "Timer:   " + min + ":" + (sec < 10 ? "0" : "") + sec + "<br>Score: " + player_score + "<br>Life: " + player_life;
+    update_game_status()
   }
   if (dis < 0){
       clearInterval(interval_count);
@@ -401,10 +397,26 @@ function update_timer() {
   }
 }
 
+function update_game_status() {
+    let prefix = ""
+    if (GameOver && player_life !== 0){
+        prefix = "Timer:   " + "0:00"
+    }
+    else {
+        prefix = "Timer:   " + min + ":" + (sec < 10 ? "0" : "") + sec
+    }
+    prefix += "<br>Score: " + player_score + "<br>Life: ";
+    let life =  ""
+    for(let i=0; i<player_life; i++){life += "&#x2764;"}
+    timer_div.innerHTML = prefix + life
+}
+
 function end_game() {
+    update_game_status()
+    //add the score to the personal scores
+    User_score_list.push(player_score)
     show_end_game_screen();
     stop_timer();
-
     string_to_show = ""
     surfix = "<br>Your Score: " + player_score + "<h1>Top Scores:";
     if(player_life === 0)
@@ -413,7 +425,6 @@ function end_game() {
     }
     else {
         // the game end because the time over
-        // TODO : need to understand that that not impact chamipons
         if (GameOver){
             if(player_score < 100){
                 string_to_show = "You can do better"

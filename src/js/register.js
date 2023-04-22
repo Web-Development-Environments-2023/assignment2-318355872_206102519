@@ -1,5 +1,4 @@
 //dict for save all users
-//TODO not the most important but to encrypts the password using the inserted password
 User_DB = {};
 User_DB['p'] = {
     "User_name": 'p',

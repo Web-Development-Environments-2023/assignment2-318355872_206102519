@@ -12,7 +12,6 @@ space_ship.forEach((ship) =>{
     });
 });
 
-// TODO need to fix this and understand of to config the fire key for now is space
 var FireKey = 32;
 
 function selected_key() {
