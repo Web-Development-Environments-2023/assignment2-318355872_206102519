@@ -62,7 +62,7 @@ original_y=410;
 
 canvas_size_for_13_inch = {x:725,y:420}
 shot_laser = false;
-player_area = 1 - 0.4;
+player_area = 1 - 0.35;
 //laser parameters for the player spaceship
 var player_laser_param = {x:-1,y:-1,w:40,h:40}
 let enemy_laser_param= {x:0,y:0,w:40,h:40}
@@ -366,7 +366,7 @@ function end_game() {
             string_to_show = "Champion!"
         }
     }
-    string_to_show += surfix;
+    string_to_show += "<br>" + surfix;
     User_score_list.sort(function(a, b) {
         return b - a;
     });

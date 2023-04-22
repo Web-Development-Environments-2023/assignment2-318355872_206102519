@@ -20,13 +20,6 @@ function selected_key() {
 
 }
 
-// key = document.getElementById("key_config");
-// key.addEventListener('keydown', function () {
-//     if(key.length === 1){
-//         FireKey = key;
-//         key.placeholder = "Key set to " + FireKey;
-//     }
-// });
 // func to get the right img of the space ship that selected
 function get_spaceship() {
     if (active_spaceship === null){
@@ -57,5 +50,6 @@ function startgame() {
         show_error_in_div("Need to chose SpaceShip");
         return;
     }
+    active_spaceship.classList.remove('SpaceShip_chosen');
     show_game_screen()
 }
