@@ -28,7 +28,7 @@ var first_game = true;
 // player score and life
 player_score = 0
 player_life = 0
-
+let game_over_sound=document.getElementById("gameover");
 target_fired_sound=document.getElementById("targedfired");
 // section for creating matrix of enemy spaces
 function create_Enemy_Array(){
@@ -238,6 +238,7 @@ function enemy_fire(){
                         set_fire_enemy_false();
                         player_life=player_life-1;
                         if(player_life==0){
+                            game_over_sound.play();
                             GameOver=true
                         }
                         return;
