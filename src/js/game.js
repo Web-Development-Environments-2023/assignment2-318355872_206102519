@@ -348,7 +348,7 @@ if(fire_array.length!=0){
 }
     }
 }
-    
+
 
 
 // func for the laser beam of the player
