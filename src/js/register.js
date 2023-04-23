@@ -1,5 +1,4 @@
 //dict for save all users
-//TODO not the most important but to encrypts the password using the inserted password
 User_DB = {};
 User_DB['p'] = {
     "User_name": 'p',
@@ -60,7 +59,7 @@ function valid_parameters(){
     // add the need user to the DB
     User_DB[User_name.value] = dict_user;
     show_error_in_div("The User has created")
-    Show_WelcomePage_from_register()
+    Show_LoginPage_From_AnyWhere()
     form_register = document.getElementById("RegisterForm")
     form_register.reset()
 }
