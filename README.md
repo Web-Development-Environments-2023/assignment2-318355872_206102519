@@ -5,8 +5,8 @@ Space war
 Welcome to the README file for our Space war game! This file contains important information that will help you understand how to play the game and get the most out of your experience.
 
 Founders:
-Nitay yakoby-206102519,
-Itamar Zafran-318355812
+Itamar Zafran-318355812, Nitay yakoby-206102519
+
 
 ## Installation
 
