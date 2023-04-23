@@ -25,3 +25,6 @@ Itamar Zafran-318355812, Nitay yakoby-206102519
 4. "login.js"- java script file for manage the functionality that happend during the login session
 5. "register.js"- java script file for manage the functionality that happend during the register session
 6. "game.js"- java script file that manage all the functionality of the game that connects to the "canvas" tag in the html file
+
+
+https://web-development-environments-2023.github.io/assignment2-318355872_206102519/
