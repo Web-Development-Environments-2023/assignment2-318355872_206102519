@@ -32,17 +32,15 @@ Welcome to the README file for our Space War game!
 <b>6.</b>"game.js" - This JavaScript file manages all the functionality of the game and connects to the "canvas" tag in the HTML file.<br>
 
 ## Game Screen Shots
-<br>
-<div style="text-align:center; font-size: 30px">
-  <b>WelcomePage</b><br>
+
+  # WelcomePage <br>
   <img src="Resource/imgs/game_screen_shots/img_1.png"  alt="">
 
-  <b>ConfigurationPage</b><br>
+  # ConfigurationPage
   <img src="Resource/imgs/game_screen_shots/img_2.png" >
 
-  <b>GamePage</b><br>
+  # GamePage
   <img src="Resource/imgs/game_screen_shots/img_3.png" >
 
-  <b>ScorePage</b><br>
+  # ScorePage
   <img src="Resource/imgs/game_screen_shots/img_4.png" >
-</div>
