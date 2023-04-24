@@ -227,7 +227,7 @@ function enemy_fire(){
                     return;
                 }
                 //collison between enemy's fire to good spaceship's fire
-                else if(fire_array[i][0]>=location_x_player-15 && fire_array[i][0]<location_x_player+50&& fire_array[i][1]>=location_y_player-30 && 
+                else if(fire_array[i][0]>=location_x_player-10 && fire_array[i][0]<=location_x_player+70&& fire_array[i][1]>location_y_player-20 && 
                     fire_array[i][1]<=location_y_player+70){
                         location_x_player=original_x;
                         location_y_player=original_y;
