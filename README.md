@@ -1,11 +1,20 @@
-## Project Name
-Space war
+<div style="text-align:center;">
+  <img src="Resource/imgs/logo/game_logo.png" width="200px">
+</div>
 
-## abstract
-Welcome to the README file for our Space war game! This file contains important information that will help you understand how to play the game and get the most out of your experience.
+## Website
+<div style="font-size: 30px; font-family: 'Bangers',cursive;">
 
-Founders:
-Itamar Zafran-318355812, Nitay yakoby-206102519
+[Space War](https://web-development-environments-2023.github.io/assignment2-318355872_206102519/)
+</div>
+
+## Abstract
+Welcome to the README file for our Space War game!
+<br>This document includes crucial details to help you better understand how to play the game and maximize your experience.
+<br>Additionally, we'll provide an overview of the key files in the project.
+
+<b>Founders:</b>
+<u>Itamar Zafran</u> - 318355812, <u>Nitay yakoby</u> - 206102519
 
 
 ## Installation
@@ -14,17 +23,26 @@ Itamar Zafran-318355812, Nitay yakoby-206102519
 2. Open file called "index.html" with your browser
 3. register/login and start game
 
-## Usage
-1. Open file called "index.html" with your browser
-2. register/login and start game
+## Files
+<b>1.</b>"index.html" - This file contains the content of our website.<br>
+<b>2.</b>"change-content.js" - This JavaScript file manages the changing content of the HTML page as we navigate through the website.<br>
+<b>3.</b>"configuration.js" - This JavaScript file is responsible for the functionality of the configuration screen.<br>
+<b>4.</b>"login.js" - This JavaScript file manages the functionality that occurs during a login session.<br>
+<b>5.</b>"register.js" - This JavaScript file manages the functionality that occurs during a registration session.<br>
+<b>6.</b>"game.js" - This JavaScript file manages all the functionality of the game and connects to the "canvas" tag in the HTML file.<br>
 
-## files
-1. "index.html"- file that contains the content of our website
-2. "change-content.js"- java script that manage the cahange content of the html page during our "trip" in the website
-3. "configuration.js"- java script file that responsible for the functionality of the configuration screen
-4. "login.js"- java script file for manage the functionality that happend during the login session
-5. "register.js"- java script file for manage the functionality that happend during the register session
-6. "game.js"- java script file that manage all the functionality of the game that connects to the "canvas" tag in the html file
+## Game Screen Shots
+<br>
+<div style="text-align:center; font-size: 30px">
+  <b>WelcomePage</b><br>
+  <img src="Resource/imgs/game_screen_shots/img_1.png"  alt="">
 
+  <b>ConfigurationPage</b><br>
+  <img src="Resource/imgs/game_screen_shots/img_2.png" >
 
-https://web-development-environments-2023.github.io/assignment2-318355872_206102519/
+  <b>GamePage</b><br>
+  <img src="Resource/imgs/game_screen_shots/img_3.png" >
+
+  <b>ScorePage</b><br>
+  <img src="Resource/imgs/game_screen_shots/img_4.png" >
+</div>

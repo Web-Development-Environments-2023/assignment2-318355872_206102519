@@ -1,14 +1,14 @@
-section = document.getElementById('active_section');
-Menu = document.getElementById('Menu');
-AllPages = section.querySelectorAll('div');
-RegisterPage = document.getElementById("RegisterPage");
-WelcomePage = document.getElementById("WelcomePage");
-ConfigurationPage = document.getElementById("Configuration");
-LoginPage = document.getElementById("LoginPage");
-GamePage = document.getElementById("GameScreen");
-About_dialog = document.getElementById('AboutDialog')
-EndDiv = document.getElementById("EndGame");
-GameSoundTrack = document.getElementById("Game_sound");
+let section = document.getElementById('active_section');
+let Menu = document.getElementById('Menu');
+let AllPages = section.querySelectorAll('div');
+let RegisterPage = document.getElementById("RegisterPage");
+let WelcomePage = document.getElementById("WelcomePage");
+let ConfigurationPage = document.getElementById("Configuration");
+let LoginPage = document.getElementById("LoginPage");
+let GamePage = document.getElementById("GameScreen");
+let About_dialog = document.getElementById('AboutDialog')
+let EndDiv = document.getElementById("EndGame");
+let GameSoundTrack = document.getElementById("Game_sound");
 
 function Show_WelcomePage_From_AnyWhere() {
     close_open_divs()
@@ -24,6 +24,20 @@ function Show_LoginPage_From_AnyWhere() {
     close_open_divs()
     LoginPage.classList.add('reveal');
     LoginPage.style.display = 'block';
+
+}
+function show_configuration_From_AnyWhere() {
+    close_open_divs()
+    if(typeof intervalTimer !== 'undefined'){
+        if (intervalTimer){clearInterval(intervalTimer);}
+    }
+    if(typeof interval_count !== 'undefined'){
+        if (interval_count){clearInterval(interval_count);}
+
+    }
+    ConfigurationPage.classList.add('reveal');
+    ConfigurationPage.style.display = 'block';
+    document.getElementById("time").selectedIndex = 0;
 
 }
 
@@ -54,14 +68,7 @@ function close_dialog() {
 }
 
 // func that show the Configuration page from the Welcome page
-function show_configuration() {
-    LoginPage.classList.add('hidden');
-    LoginPage.style.display = 'none';
-    ConfigurationPage.classList.add('reveal');
-    ConfigurationPage.style.display = 'block';
-    document.getElementById("time").selectedIndex = 0;
 
-}
 // func that reveal the game screen from the configuration screen
 function show_game_screen() {
     ConfigurationPage.classList.add('hidden');
@@ -86,12 +93,12 @@ function hide_end_game_screen() {
 // func that create error message on the page with Back button
 // get String of the error message like "Not correct Password"
 function show_error_in_div(error_message) {
-    div_error = document.createElement('div');
+    let div_error = document.createElement('div');
     div_error.classList.add('Error');
-    message = document.createTextNode(error_message);
+    let message = document.createTextNode(error_message);
     div_error.appendChild(message);
-    error_button = document.createElement('button');
-    error_button_text = document.createTextNode('Back');
+    let error_button = document.createElement('button');
+    let error_button_text = document.createTextNode('Back');
     error_button.classList.add('Error_button');
     error_button.appendChild(error_button_text);
     error_button.addEventListener('click', function () {
@@ -107,13 +114,13 @@ function show_error_in_div(error_message) {
 }
 // pop up div for get key code of the fire key
 function Show_select_fire_key(){
-     div_chose_key = document.createElement('div_key');
+    let div_chose_key = document.createElement('div_key');
     div_chose_key.classList.add('chose_key');
-    message = document.createTextNode("Click On Fire Key");
+    let message = document.createTextNode("Click On Fire Key");
     div_chose_key.appendChild(message);
     document.body.appendChild(div_chose_key)
     div_chose_key.id = 'key_div'
-    div_catch = document.getElementById('key_div')
+    let div_catch = document.getElementById('key_div')
     document.addEventListener('keydown', key_down_for_fire);
     ConfigurationPage.classList.add('freeze')
 
@@ -125,7 +132,7 @@ function Show_select_fire_key(){
             FireKey = event.keyCode;
             document.removeEventListener('keydown', key_down_for_fire);
             ConfigurationPage.classList.remove('freeze');
-            // if the player chose space it will activate the button again the prevent will prevent to do it
+            // if the player chose space it will activate the button again the prevention will prevent to do it
             event.preventDefault();
         }
         else {

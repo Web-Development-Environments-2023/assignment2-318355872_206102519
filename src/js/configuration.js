@@ -1,6 +1,8 @@
 // get the select ship
-space_ship = document.querySelectorAll('.Spaceship_select');
-active_spaceship = null;
+let space_ship = document.querySelectorAll('.Spaceship_select');
+let active_spaceship = null;
+let FireKey = 32;
+
 // event listener to the select of one ship
 space_ship.forEach((ship) =>{
     ship.addEventListener('click', function () {
@@ -12,14 +14,11 @@ space_ship.forEach((ship) =>{
     });
 });
 
-var FireKey = 32;
-
 function selected_key() {
     Show_select_fire_key();
 
 }
-
-// func to get the right img of the space ship that selected
+// func to get the right img of the spaceship that selected
 function get_spaceship() {
     if (active_spaceship === null){
         return null
