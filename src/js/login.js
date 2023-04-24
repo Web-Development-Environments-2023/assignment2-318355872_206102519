@@ -19,7 +19,7 @@ function valid_login() {
         return false;
     }
     // make the login and move to the game screen
-    show_configuration()
+    show_configuration_From_AnyWhere()
     form_login = document.getElementById("LoginForm")
     form_login.reset()
 
