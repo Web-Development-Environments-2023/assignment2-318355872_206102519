@@ -25,6 +25,7 @@ var countDownDate;
 var interval_count;
 var GameOver = false;
 var first_game = true;
+let counter_start_fire;
 // player score and life
 player_score = 0
 player_life = 0
@@ -306,7 +307,10 @@ function updatePositions()
     if(check_all_enemy_eliminate()){
         end_game();
     }
+    if(counter_start_fire>=30){
     enemy_fire();
+    }
+    counter_start_fire+=1;
     draw();
 }
 
@@ -497,7 +501,7 @@ function start_game_after_config() {
     var h= canvas.height;
     canvasWidth = w; // store the width
     canvasHeight = h; // store the height
-    
+    counter_start_fire=0
     
     initialTargetVelocity = -h / 4; // initial target speed multiplier
     ball_velocity=5;
